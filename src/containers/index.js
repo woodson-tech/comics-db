@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 import PouchDB from 'pouchdb'
+import Details from './../Details'
+import sampleIssue from './../dummydata.json'
 
 /**
  * [COMP DESCRIPTION]
@@ -15,8 +17,14 @@ const db = new PouchDB(process.env.DB_URL, {
 
 db.info().then(console.log)
 
-type Props = {||}
+console.log('in containers/index.js', sampleIssue)
 
-const Comp = (props: Props) => <div>{'Index Container'}</div>
+// type Props = {||}
+
+// const Comp = (props: Props) =>
+const Comp = () =>
+<div>
+  <Details issue={sampleIssue} />
+</div>
 
 export default Comp
